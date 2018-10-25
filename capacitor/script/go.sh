@@ -96,7 +96,7 @@ function main()
     echo "The process of training is over. The result is in xml file."
     sleep 5
     echo "classifying ..."
-    classify classify.py
+    #classify classify.py
     echo "The process of classification is over."
 }
 
