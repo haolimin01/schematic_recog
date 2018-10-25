@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<stage10>
+  <maxWeakCount>10</maxWeakCount>
+  <stageThreshold>-1.0326414108276367e+00</stageThreshold>
+  <weakClassifiers>
+    <_>
+      <internalNodes>
+        0 -1 57305 -1.5428066253662109e-02</internalNodes>
+      <leafValues>
+        2.9281768202781677e-01 -6.0381859540939331e-01</leafValues></_>
+    <_>
+      <internalNodes>
+        0 -1 78193 -2.7270270511507988e-03</internalNodes>
+      <leafValues>
+        -9.3974238634109497e-01 1.5319657325744629e-01</leafValues></_>
+    <_>
+      <internalNodes>
+        0 -1 6462 -6.2764324247837067e-03</internalNodes>
+      <leafValues>
+        5.3306329250335693e-01 -3.3722054958343506e-01</leafValues></_>
+    <_>
+      <internalNodes>
+        0 -1 65156 -3.4266535658389330e-03</internalNodes>
+      <leafValues>
+        5.9093004465103149e-01 -3.4493106603622437e-01</leafValues></_>
+    <_>
+      <internalNodes>
+        0 -1 11 5.7369831483811140e-04</internalNodes>
+      <leafValues>
+        1.2392082065343857e-01 -9.8344570398330688e-01</leafValues></_>
+    <_>
+      <internalNodes>
+        0 -1 2792 -1.2488072738051414e-02</internalNodes>
+      <leafValues>
+        6.5501719713211060e-01 -2.7857449650764465e-01</leafValues></_>
+    <_>
+      <internalNodes>
+        0 -1 36345 -1.0348223149776459e-03</internalNodes>
+      <leafValues>
+        -8.7956881523132324e-01 2.5511559844017029e-01</leafValues></_>
+    <_>
+      <internalNodes>
+        0 -1 47269 1.3124282304488588e-05</internalNodes>
+      <leafValues>
+        -4.7642490267753601e-01 3.0623084306716919e-01</leafValues></_>
+    <_>
+      <internalNodes>
+        0 -1 47639 6.4830010524019599e-04</internalNodes>
+      <leafValues>
+        2.6812991499900818e-01 -5.7435232400894165e-01</leafValues></_>
+    <_>
+      <internalNodes>
+        0 -1 3482 -6.6581869032233953e-04</internalNodes>
+      <leafValues>
+        4.0426799654960632e-01 -4.4661372900009155e-01</leafValues></_></weakClassifiers></stage10>
+</opencv_storage>
