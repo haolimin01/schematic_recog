@@ -43,11 +43,11 @@ def binarization(image):
 
 def classfy_all():
     image_path = '/home/haolimin/github/schematic_recog/test/2.jpg' #2.jpg无字母
-    mos_xml = '/home/haolimin/github/schematic_recog/mos/xml/cascade.xml'
-    ground_xml = '/home/haolimin/github/schematic_recog/ground/xml/cascade.xml'
-    capacitor_xml = '/home/haolimin/github/schematic_recog/capacitor/xml/cascade.xml'
-    source_xml = '/home/haolimin/github/schematic_recog/source/xml/cascade.xml'
-    resistor_xml = '/home/haolimin/github/schematic_recog/resistor/xml/cascade.xml'
+    mos_xml = '/home/haolimin/github/schematic_recog/data/mos/xml/cascade.xml'
+    ground_xml = '/home/haolimin/github/schematic_recog/data/ground/xml/cascade.xml'
+    capacitor_xml = '/home/haolimin/github/schematic_recog/data/capacitor/xml/cascade.xml'
+    source_xml = '/home/haolimin/github/schematic_recog/data/source/xml/cascade.xml'
+    resistor_xml = '/home/haolimin/github/schematic_recog/data/resistor/xml/cascade.xml'
     xmls = [mos_xml, ground_xml, capacitor_xml, source_xml, resistor_xml]
 
     original_image = load_image(image_path)
