@@ -7,9 +7,8 @@ def classify(xml_path, image):
         print(xml_path, ' does not exist ...')
         return False, None
     feature = cv2.CascadeClassifier(xml_path)
-    gauss = cv2.GaussianBlur(image, (3, 3), 0)
-    gray_image = cv2.cvtColor(gauss, cv2.COLOR_BGR2GRAY)
-    target = feature.detectMultiScale(gray_image)
+    image = binarization(image)
+    target = feature.detectMultiScale(image)
     if len(target) != 0:
         return True, target
     else:
@@ -34,6 +33,15 @@ def clear_pixel(image, x, y, w, h):
     return True, image
 
 
+def draw_rectangle(image, results):
+    if len(results) != 0:
+        image = binarization(image)
+        for element in results:
+            for x, y, w, h in element:
+                cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 0), 2)
+    return image
+
+
 def binarization(image):
     gauss = cv2.GaussianBlur(image, (3, 3), 0)
     gray_image = cv2.cvtColor(gauss, cv2.COLOR_BGR2GRAY)
@@ -42,27 +50,31 @@ def binarization(image):
 
 
 def classfy_all():
-    image_path = '/home/haolimin/github/schematic_recog/test/2.jpg' #2.jpg无字母
-    mos_xml = '/home/haolimin/github/schematic_recog/data/mos/xml/cascade.xml'
-    ground_xml = '/home/haolimin/github/schematic_recog/data/ground/xml/cascade.xml'
-    capacitor_xml = '/home/haolimin/github/schematic_recog/data/capacitor/xml/cascade.xml'
-    source_xml = '/home/haolimin/github/schematic_recog/data/source/xml/cascade.xml'
+    image_path = '/home/haolimin/github/schematic_recog/test/1.jpg' #2.jpg无字母
+    #mos_xml = '/home/haolimin/github/schematic_recog/data/mos/xml/cascade.xml'
+    #ground_xml = '/home/haolimin/github/schematic_recog/data/ground/xml/cascade.xml'
+    #capacitor_xml = '/home/haolimin/github/schematic_recog/data/capacitor/xml/cascade.xml'
+    #source_xml = '/home/haolimin/github/schematic_recog/data/source/xml/cascade.xml'
     resistor_xml = '/home/haolimin/github/schematic_recog/data/resistor/xml/cascade.xml'
-    xmls = [mos_xml, ground_xml, capacitor_xml, source_xml, resistor_xml]
+    #xmls = [mos_xml, ground_xml, capacitor_xml, source_xml, resistor_xml]
+    xmls = [resistor_xml]
 
     original_image = load_image(image_path)
-    binary_image = binarization(original_image)
+    results = []
     for index, feature in enumerate(xmls):
         ret, feature = classify(xmls[index], original_image)
+        print(ret)
         if ret:
-            for x, y, w, h in feature:
-                clear_pixel(binary_image, x, y, w, h)
-    cv2.imwrite('/home/haolimin/github/schematic_recog/test/result.jpg', binary_image)
-    return binary_image
+            results.append(feature)
+    return original_image, results
 
 
 def main():
-    classfy_all()
+    image, results = classfy_all()
+    print(len(results))
+    image = draw_rectangle(image, results)
+    cv2.imshow('image', image)
+    cv2.waitKey(0)
 
 
 if __name__ == '__main__':
